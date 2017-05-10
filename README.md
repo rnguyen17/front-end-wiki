@@ -23,3 +23,9 @@ This wiki is a collection of front-end topics that you will encounter time and t
 3. **Explain what an execution context is and how it differs from scope**
     * ***scope*** refers to a functions variable access when a function is executed. Can usually be determined within the code
     * ***execution context*** refers to the environment in which a function is executed in, and includes details pertaining to that environment (scope, variable declarations, arguments, etc.)
+
+```javascript
+var s = function() {
+	console.log('javascript code block');
+}
+```
