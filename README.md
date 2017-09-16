@@ -66,7 +66,7 @@ var outerFunction = function() {
 	* ***Native*** objects are specified by ECMAScript implementation and available as part of the language (Date, Math, string methods)
 
 10. **Difference between: function Person(){}, var person = Person(), and var person = new Person()**
-	* function Person(){} is the constructor class for creating new instances on a class or object
+	* function Person(){} is the constructor class for creating new instances of a class or object
 	* var person = Person() invokes the Person function (can cause bugs when using ***this*** keyword as it will bind to global scope)
 	* var person = new Person(){} creates a new instance of the Person class
 
