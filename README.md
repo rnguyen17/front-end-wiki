@@ -76,6 +76,11 @@ var outerFunction = function() {
 	* ***Apply*** invokes a function with arguments pass in as an array
 	* **A**pply for Array, **C**all for comma
 
+12. **Explain how prototypal inheritance works**
+	* Prototypal inheritance describes the process in which object properties and methods are inherited in Javascript
+	* In Javascript, these is no concept of classes (objects do not inherit from a blueprint)
+	* Instead, objects are inherited from other *objects*
+	* All objects created have a prototype chain linking to global ***Object*** 
 
 
 
