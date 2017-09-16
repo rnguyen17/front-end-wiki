@@ -74,9 +74,34 @@ var outerFunction = function() {
 	* Both call and apply invoke a function with a different execution context or value for ***this*** keyword
 	* ***Call*** invokes a function with arguments passed in explicitly as a comma separated list
 	* ***Apply*** invokes a function with arguments pass in as an array
-	* **A**pply for Array, **C**all for comma
+	* **[A]**pply for Array, **[C]**all for comma
 
-12. **Explain how prototypal inheritance works**
+12. **What does .bind do?**
+	* ***.bind*** returns a function with an explicitly defined execution context (object that invokes ***this***)
+
+```javascript
+var a = {
+		name: 'a',
+		sayName: function() {
+			console.log(this.name);
+		}
+	};
+
+var b = {
+	name: 'b',
+	sayName: a.sayName
+}
+
+b.sayName() // 'b': this.name refers to b.name
+
+// Assign a.sayName method to b.sayName
+// Execution context will be set to 'a'
+
+b.sayName = a.sayName.bind(a);
+b.sayName() // 'a': this.name refers to a.name
+```
+
+13. **Explain how prototypal inheritance works**
 	* Prototypal inheritance describes the process in which object properties and methods are inherited in Javascript
 	* In Javascript, these is no concept of classes (objects do not inherit from a blueprint)
 	* Instead, objects are inherited from other *objects*
