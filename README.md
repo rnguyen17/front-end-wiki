@@ -80,7 +80,29 @@ var outerFunction = function() {
 	* Prototypal inheritance describes the process in which object properties and methods are inherited in Javascript
 	* In Javascript, these is no concept of classes (objects do not inherit from a blueprint)
 	* Instead, objects are inherited from other *objects*
-	* All objects created have a prototype chain linking to global ***Object*** 
+	* These inherited properties are found on the *__prototype__* property, which is a reference to another object, which in turn has its own *__prototype__* property
+	* All objects inherit from global ***Object*** prototype
+	* When objects are created as *new* instances of other objects, they inherit methods and properties defined on the parent object's prototype
+	* When a property is accessed on the object, the property is first looked up on the object instance, then its prototype. If not found, look at the prototype's prototype, etc.
+
+```javascript
+// Define Parent Constructor 
+var Parent = function() {
+}
+
+// Define Prototype to share properties and methods
+Parent.prototype.foo = 'prototype_foo';
+Parent.prototype.bar = 'prototype_bar';
+
+// Create new instance of Parent
+var child = new Parent();
+
+// Overwrite foo property on child instance
+child.foo = 'instance_foo';
+
+console.log(child.foo) // 'instance_foo': foo is defined on object instance
+console.log(child.bar) // 'prototype_bar': bar not defined on object instance, so we look at prototype of child for bar property, which is found on Parent.prototype
+``` 
 
 
 
